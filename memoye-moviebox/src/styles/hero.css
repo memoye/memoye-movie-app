@@ -1,0 +1,15 @@
+.hero {
+  width: 100%;
+  position: relative;
+  min-height: 80vh;
+  background: red;
+}
+
+.hero img {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.herotext {
+  height: 100vw;
+}

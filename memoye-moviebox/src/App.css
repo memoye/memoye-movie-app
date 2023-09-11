@@ -1,0 +1,20 @@
+.App {
+  font-family: var(--primary-font);
+  background: blue; /*remove later*/
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 5vmin;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.15em;
+  width: fit-content;
+  color: white;
+}
+
+.logo img {
+  width: 25%;
+  aspect-ratio: 1;
+}

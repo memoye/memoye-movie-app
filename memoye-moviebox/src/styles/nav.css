@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  box-sizing: border-box;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.navBtns {
+  display: flex;
+  width: 10%;
+  min-width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signinBtn {
+  all: unset;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
