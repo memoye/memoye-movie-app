@@ -1,6 +1,6 @@
 const Movies = () => {
     return (
-        <div>
+        <div className=''>
             Movies
         </div>
     )

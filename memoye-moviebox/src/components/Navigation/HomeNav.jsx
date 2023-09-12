@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import Logo from "../Logo"
 import '../../styles/nav.css';
-import SearchBox from "./Search"
+import SearchBox from "./SearchBox"
 import Hamburger from "./Hamburger"
 import { useEffect, useState } from "react";
 

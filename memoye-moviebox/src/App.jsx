@@ -3,6 +3,8 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from 'react-router-dom';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import Search from './pages/Search';
+import Movies from './pages/Movies';
 
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
       <Router>
         <Routes>
           <Route path={ '/' } element={ <Home /> }></Route>
-          <Route path={ 'search' } element={ <Home /> }></Route>
+          <Route path={ '/search/:query' } element={ <Search /> }></Route>
+          <Route path={ '/movies/:id' } element={ <Movies /> }></Route>
         </Routes>
       </Router>
       <Footer />

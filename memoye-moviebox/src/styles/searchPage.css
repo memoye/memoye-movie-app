@@ -1,0 +1,18 @@
+.searchPage {
+  padding-top: 3rem;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(0, 0, 0, 0.575)
+  );
+  max-width: 1440px;
+}
+
+.searchTitle {
+  padding: 10px 5%;
+}
+
+.searchText {
+  color: var(--gray-300);
+  font-style: italic;
+}

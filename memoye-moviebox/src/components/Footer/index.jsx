@@ -21,6 +21,7 @@ const Footer = () => {
                             return (
                                 <a className="smLinks"
                                     key={ profile.name }
+                                    target={ '_blank' }
                                     href={ profile.url }>{ profile.icon }</a>
                             )
                         })

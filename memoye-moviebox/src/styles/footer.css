@@ -2,7 +2,9 @@
   margin-top: 1rem;
   box-sizing: border-box;
   padding: 2rem 5%;
+  width: 100vw;
   padding-top: 4rem;
+  align-self: end;
 }
 
 .formalities,

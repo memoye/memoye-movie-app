@@ -1,6 +1,10 @@
 .App {
   font-family: var(--primary-font);
-  min-height: 100vh;
+  width: 100vw;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
 
