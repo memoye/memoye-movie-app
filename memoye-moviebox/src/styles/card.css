@@ -1,0 +1,48 @@
+.card {
+  min-width: 250px;
+  width: 25%;
+  position: relative;
+}
+
+.card * {
+  margin: 0;
+}
+
+.moviePoster {
+  width: 100%;
+  line-height: 1;
+}
+
+.moviePoster img {
+  width: 100%;
+}
+
+.movieTitle {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  margin: 0.5rem 0;
+}
+
+.releaseDate {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gray-400);
+  margin-bottom: 1rem;
+}
+
+.likeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-style: 2rem;
+  color: var(--gray-300);
+  padding: 0.5em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.likeBtn:hover {
+  color: var(--gray-300);
+  background: rgba(255, 255, 255, 0.3);
+}

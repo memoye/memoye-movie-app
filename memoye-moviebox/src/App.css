@@ -1,11 +1,10 @@
 .App {
   font-family: var(--primary-font);
-  background: blue; /*remove later*/
 }
 
 .logo {
   font-weight: 700;
-  font-size: 5vmin;
+  font-size: 4vmin;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -17,4 +16,8 @@
 .logo img {
   width: 25%;
   aspect-ratio: 1;
+}
+
+.title {
+  font-size: 6vmin;
 }

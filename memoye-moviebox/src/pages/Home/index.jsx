@@ -6,7 +6,26 @@ import axios from 'axios';
 import { loadImg } from '../../assets';
 import Loading from '../../components/Loading';
 import HomeNav from '../../components/Navigation/HomeNav';
+import Card from '../../components/Card';
+import Button from '../../components/Button';
+import { BiChevronRight } from 'react-icons/bi';
 
+const sample = {
+    adult: false,
+    backdrop_path: "/4Yon9Qmg3U4onL0OywXAHSkFTUG.jpg",
+    genre_ids: [28, 18],
+    id: 1163045,
+    original_language: "yo",
+    original_title: "Jagun Jagun",
+    overview: "A young man determined to become a powerful warrior joins an elite army, encountering the wrath of a maniacal warlord and the love of a fierce woman.",
+    popularity: 606.008,
+    poster_path: "/n0GXumEMtwgYj2M3YW4Iu0veYJg.jpg",
+    release_date: "2023-08-10",
+    title: "Jagun Jagun",
+    video: false,
+    vote_average: 6.5,
+    vote_count: 41
+}
 
 const Home = () => {
 
@@ -47,16 +66,36 @@ const Home = () => {
 
 
     useEffect(() => {
-        // fetchData()
+        fetchData()
     }, [])
 
 
-    if (isLoading) return <Loading /> //if data is fetching, display loading screen
+    // if (!isLoading) return <Loading /> //if data is fetching, display loading screen
 
     return (
         <div className='home'>
+            { isLoading ? <Loading /> : null }
             <HomeNav />
             <Hero />
+            <div className='cards'>
+                <div className='heading'>
+                    <h2 className='title'>Featured Movies</h2>
+                    <Button
+                        className={ 'seeMore' }
+                    >
+                        See More <BiChevronRight style={ { fontSize: '1.5em' } } />
+                    </Button>
+                </div>
+
+                <div className='cardsGrid'>
+                    {
+                        topRated?.map((movie, index) => {
+                            if (index < 12) return (<Card key={ movie.id } { ...movie } />)
+                        })
+                    }
+                </div>
+            </div>
+
         </div>
     )
 }

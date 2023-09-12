@@ -1,17 +1,39 @@
 import { useEffect, useState } from "react"
-import { BASE_URL, getData, getImg } from "../../utils"
+import { BASE_URL, getImg, previewStr } from "../../utils"
 import axios from "axios";
-import { loadImg } from "../../assets";
+import { imdb, loadImg, rt } from "../../assets";
 import '../../styles/hero.css';
 import Loading from "../../components/Loading";
+import Ratings from "../../components/Card/Ratings";
+import Button from "../../components/Button";
+import { HiPlayCircle } from "react-icons/hi2";
 
 // ... (imports and other code)
+const sample = {
+    adult: false,
+    backdrop_path: "/4Yon9Qmg3U4onL0OywXAHSkFTUG.jpg",
+    genre_ids: [28, 18],
+    id: 1163045,
+    original_language: "yo",
+    original_title: "Jagun Jagun",
+    overview: "A young man determined to become a powerful warrior joins an elite army, encountering the wrath of a maniacal warlord and the love of a fierce woman.",
+    popularity: 606.008,
+    poster_path: "/n0GXumEMtwgYj2M3YW4Iu0veYJg.jpg",
+    release_date: "2023-08-10",
+    title: "Jagun Jagun",
+    video: false,
+    vote_average: 6.5,
+    vote_count: 41
+}
+
 
 const Hero = () => {
     const endpoint = 'movie/popular'
     const params = { language: 'en-US', page: '1', region: 'ng' }
     const [isLoading, setIsLoading] = useState(false)
     const [popular, setPopular] = useState([])
+    const [dispIndex, setDispIndex] = useState(0)
+    const [topMovie, setTopMovie] = useState(sample)
 
     function fetchData() {
         setIsLoading(true)
@@ -42,23 +64,66 @@ const Hero = () => {
             })
     }
 
+    function handleCarousel(index) {
+        setDispIndex(index)
+    }
+
     useEffect(() => {
         fetchData();
-    }, []);
+
+    }, [])
+
+    useEffect(() => {
+        setTopMovie(popular[dispIndex])
+        // setTimeout(() => {
+        //     if (dispIndex < 4) {
+        //         setDispIndex(prev => prev + 1)
+        //     } else {
+        //         setDispIndex(0)
+        //     }
+        // }, 30000)
+
+
+    }, [dispIndex]);
+
+
 
     // Use a separate useEffect to log the popular state after it's updated
     useEffect(() => {
-        console.log(popular);
+        setTopMovie(popular[dispIndex])
     }, [popular]); // Add popular as a dependency here
 
     if (isLoading) return <Loading />
 
+
     return (
 
-        <div div className="hero" >
-            {/* <img src={ '/' } alt={ title } /> */ }
+        <div className="hero" >
+            { topMovie && <img src={ getImg(topMovie?.backdrop_path, true) } alt={ topMovie?.title } /> }
             <div className="herotext">
-
+                <h1 className="herotext_title">{ topMovie?.title }</h1>
+                { topMovie && <Ratings
+                    { ...topMovie }
+                /> }
+                <p className="heroText_desc">{ topMovie && previewStr(topMovie.overview) }</p>
+                <Button
+                    filled={ true }
+                    className={ 'hero_CTA' }
+                >
+                    <HiPlayCircle /> <span>Watch Trailer</span>
+                </Button>
+            </div>
+            <div className="sideCtrl">
+                {
+                    [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }] //sorry... 😬
+                        .map((btn, index) => (<button
+                            key={ btn.id }
+                            onClick={ () => {
+                                handleCarousel(index)
+                            } }
+                            className={ `sideCtrlBtn ${(index === dispIndex) && 'displaying'}` }
+                        >{ btn.id }</button>))
+                }
             </div>
         </div >
     )

@@ -16,4 +16,6 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  max-width: 1440px;
+  margin: auto;
 }
