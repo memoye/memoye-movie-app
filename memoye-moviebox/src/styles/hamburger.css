@@ -26,23 +26,23 @@
 
 /* .hamburger:active  */
 
-.active span,
-.hamburger:focus span {
+.active span
+/* .hamburger:focus span */ {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.active span,
-.hamburger:focus span:nth-of-type(1) {
+.active span
+/* .hamburger:focus span:nth-of-type(1) */ {
   transform: rotate(45deg);
   left: 12px;
   top: 20px;
 }
 
-.active span,
-.hamburger:focus span:nth-of-type(2) {
+.active span
+/* .hamburger:focus span:nth-of-type(2) */ {
   transform: rotate(-45deg);
   left: 12px;
   top: 20px;

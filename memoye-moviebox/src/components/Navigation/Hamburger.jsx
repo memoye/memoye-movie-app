@@ -1,10 +1,10 @@
 import '../../styles/hamburger.css'
 
 const Hamburger = (props) => {
-    const { onClick } = props
+    const { onClick, className } = props
 
     return (
-        <button className={ "hamburger" }
+        <button className={ `hamburger ${className && className}` }
             onClick={ onClick && onClick }
         >
             <span />
