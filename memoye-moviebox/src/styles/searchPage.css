@@ -3,7 +3,7 @@
   background: linear-gradient(
     to top,
     rgba(255, 255, 255, 0) 60%,
-    rgba(0, 0, 0, 0.575)
+    rgba(0, 111, 126, 0.644)
   );
   max-width: 1440px;
 }
@@ -13,6 +13,15 @@
 }
 
 .searchText {
-  color: var(--gray-300);
+  color: var(--rose-700);
+  font-style: italic;
+}
+
+.error {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 5rem;
   font-style: italic;
 }

@@ -10,6 +10,7 @@ import '../../styles/searchPage.css'
 const Search = () => {
     const { query } = useParams()
     const [results, setResults] = useState(null)
+    const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const endpoint = 'search/multi'
     const params = { query: query, include_adult: 'false', language: 'en-US', page: '1' }
@@ -18,7 +19,7 @@ const Search = () => {
 
     function fetchData() {
         setIsLoading(true)
-
+        setError('')
         const options = {
             method: 'GET',
             url: BASE_URL + endpoint,
@@ -34,7 +35,8 @@ const Search = () => {
             .then(function (response) {
                 if (response.status === 200) {
                     setIsLoading(false)
-                    setResults(response.data.results)
+                    setResults(response.data
+                        .results.filter(result => (result.media_type === 'movie' || result.media_type === 'tv')))
                 } else {
                     console.log('something went wrong! Please refresh the page')
                     throw new Error('something went wrong! Please refresh the page')
@@ -42,6 +44,7 @@ const Search = () => {
             })
             .catch(function (error) {
                 setIsLoading(false)
+                setError('Something went wrong! Please try again.')
                 console.error(error)
             })
     }
@@ -62,11 +65,11 @@ const Search = () => {
                     <h2 className='title searchTitle'>Search results for
                         <span className="searchText">{ ` "${query && query}"` }</span>
                     </h2>
-                    <div className="cardsGrid">
+                    { error === '' ? <div div className="cardsGrid">
                         { results
                             ?.map((result) => {
                                 console.log(result)
-                                if (result.media_type === 'movie' || result.media_type === 'tv') {
+                                {
                                     return (
                                         <Card
                                             key={ result.id }
@@ -76,10 +79,12 @@ const Search = () => {
                                 }
                             })
                         }
-                    </div>
+                    </div> :
+                        <p className="error">{ error }</p>
+                    }
                 </>)
             }
-        </div>
+        </div >
     )
 }
 export default Search
