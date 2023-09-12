@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom"
 import { tv } from "../../assets"
 
 const Logo = () => {
     return (
-        <div className='logo'>
+        <Link
+            to={ '/' }
+            className='logo'>
             <img src={ tv } alt="logo" />
             <span>MovieBox</span>
-        </div>
+        </Link>
     )
 }
 export default Logo
