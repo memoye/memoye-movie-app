@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Search from './pages/Search';
 import SideNav from './components/Navigation/SideNav';
 import Movies from './pages/Movies';
-import DetailsPage from './pages/Movies/DetailsPage';
+import DetailsPage from './pages/Movies/MovieDetails';
 import TvSeries from './pages/TvSeries';
 
 

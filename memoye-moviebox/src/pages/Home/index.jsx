@@ -10,23 +10,6 @@ import Card from '../../components/Card';
 import Button from '../../components/Button';
 import { BiChevronRight } from 'react-icons/bi';
 
-const sample = {
-    adult: false,
-    backdrop_path: "/4Yon9Qmg3U4onL0OywXAHSkFTUG.jpg",
-    genre_ids: [28, 18],
-    id: 1163045,
-    original_language: "yo",
-    original_title: "Jagun Jagun",
-    overview: "A young man determined to become a powerful warrior joins an elite army, encountering the wrath of a maniacal warlord and the love of a fierce woman.",
-    popularity: 606.008,
-    poster_path: "/n0GXumEMtwgYj2M3YW4Iu0veYJg.jpg",
-    release_date: "2023-08-10",
-    title: "Jagun Jagun",
-    video: false,
-    vote_average: 6.5,
-    vote_count: 41
-}
-
 const Home = () => {
 
     const endpoint = 'movie/top_rated'

@@ -11,7 +11,8 @@ const Card = ({ poster_path, id, vote_average, popularity, title, release_date, 
     return (
 
         <div data-testid='movie-card'
-            className='card'>
+            className='card'
+        >
             <a
                 href={ `/movies/${id}` }
             >
@@ -21,6 +22,7 @@ const Card = ({ poster_path, id, vote_average, popularity, title, release_date, 
                             src={ getImg(poster_path, false) }
                             draggable={ false }
                             alt={ title }
+
                         />
                         :
                         <img data-testid='movie-poster'
@@ -31,21 +33,29 @@ const Card = ({ poster_path, id, vote_average, popularity, title, release_date, 
                     }
                 </div>
                 <div>
-                    <h3 data-testid='movie-title' className='movieTitle' >{ media_type === 'tv' ? name : title }</h3>
-                    <p data-testid='movie-release-date' className='releaseDate'>{ media_type === 'tv' ? first_air_date : release_date }  </p>
+                    {
+                        media_type === 'movie' ?
+                            < h3 data-testid='movie-title' className='movieTitle' >{ title }</h3> :
+                            <h3 data-testid='movie-title' className='movieTitle' >{ name }</h3>
+                    }
+                    {
+                        media_type === 'movie' ?
+                            <p data-testid='movie-release-date' className='releaseDate'>{ release_date }  </p> :
+                            <p data-testid='movie-release-date' className='releaseDate'>{ first_air_date }  </p>
+                    }
                 </div>
                 { media_type === 'tv' && <span className='tvLabel'>TV Series</span> }
                 <Ratings
                     vote_average={ vote_average }
                     popularity={ popularity }
                 />
-            </a>
+            </a >
             <Button
                 className={ "likeBtn" }
             >
                 <HiHeart />
             </Button>
-        </div>
+        </div >
     )
 }
 export default Card

@@ -1,8 +1,19 @@
-# React + Vite
+# Movie-Box (HNGx Stage two task solution)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Created with React + Vite
 
-Currently, two official plugins are available:
+## How to run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Create `.env` file in the root directory
+2. In the `.env` store your TMBD API key **AND** ACCESS TOKEN As shown;
+
+   VITE_TMDB_API_KEY = '**YOUR-API-KEY-HERE**'
+   VITE_TMDB_ACCESS_TOKEN = "Bearer **YOUR-ACCESS-TOKEN-HERE**"
+
+3. Run `npm install` in the terminal to install dependencies.
+4. Run `npm run dev` to run the app.
+
+## Where to find
+
+**MovieDetails** --> `/src/pages/Movies/MovieDetails.jsx`
+**Card** --> `/src/components/Card/index.jsx`
