@@ -15,8 +15,8 @@ const Card = ({ poster_path, id, vote_average, popularity, title, release_date, 
         <div data-testid='movie-card'
             className='card'
         >
-            <a
-                href={ `/movies/${id}` }
+            <Link
+                to={ `/movies/${id}` }
             >
                 <div className='moviePoster'>
                     { poster_path ?
@@ -49,7 +49,7 @@ const Card = ({ poster_path, id, vote_average, popularity, title, release_date, 
                     vote_average={ vote_average }
                     popularity={ popularity }
                 />
-            </a >
+            </Link>
             <Button
                 className={ "likeBtn" }
             >

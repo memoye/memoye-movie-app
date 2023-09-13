@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, Navigate } from 'react-router-dom'
 import '../../styles/movies.css'
 import { useState, useEffect, useRef } from 'react'
 import { BASE_URL } from '../../utils'
@@ -84,8 +84,9 @@ const DetailsPage = () => {
         }
     }
 
+
     function handleRecommended(id) {
-        if (id) navigate(`/movies/${id}`)
+        navigate(`/movies/${id}`)
     }
 
     function handleMoreCast() {
@@ -109,7 +110,9 @@ const DetailsPage = () => {
     if (isLoading) return <Loading />
 
     if (error) return (
-        <p className='error'>Something went wrong, Please <a href={ `/movies/${id}` } >try again</a></p >
+        // <p className='error'>Something went wrong, Please <a href={ `/movies/${id}` } >try again</a></p >
+        <Navigate to={ '/movie' } />
+
     )
 
     const { title, release_date, overview, runtime } = movieInfo
