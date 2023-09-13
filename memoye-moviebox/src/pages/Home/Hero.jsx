@@ -114,13 +114,15 @@ const Hero = () => {
             <div className="sideCtrl">
                 {
                     [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }] //sorry... 😬
-                        .map((btn, index) => (<button
-                            key={ btn.id }
-                            onClick={ () => {
-                                handleCarousel(index)
-                            } }
-                            className={ `sideCtrlBtn ${(index === dispIndex) && 'displaying'}` }
-                        >{ btn.id }</button>))
+                        .map((btn, index) => (
+                            <button
+                                key={ btn.id }
+                                onClick={ () => {
+                                    handleCarousel(index)
+                                } }
+                                className={ `sideCtrlBtn ${(index === dispIndex) && 'displaying'}` }
+                            >{ btn.id }</button>
+                            ))
                 }
             </div>
         </div >

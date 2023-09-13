@@ -39,7 +39,15 @@
   color: var(--gray-300);
   font-weight: 200;
   letter-spacing: 1px;
-  line-height: 1;
+  /* line-height: 1; */
   padding-left: 2px;
   font-size: 2vmin;
+}
+
+@media screen and (max-width: 500px) {
+  .search {
+    flex: 3;
+    margin-right: 10px;
+    justify-self: start;
+  }
 }
