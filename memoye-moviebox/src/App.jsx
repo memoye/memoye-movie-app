@@ -21,11 +21,11 @@ function App() {
           <Route path={ '/' } element={ <Home /> } />
           <Route path={ '/search/:query' } element={ <Search /> } />
 
-          <Route path={ '/movies' } element={ <Movies /> }>
-            <Route path={ '/movies/:id' } element={ <DetailsPage /> } />
-            <Route path={ '/movies/tv/series' } element={ <TvSeries /> } />
-            <Route path={ '/movies/all/upcoming' } element={ <TvSeries /> } />
-          </Route>
+          <Route path={ '/movies' } element={ <Movies /> } />
+          <Route path={ '/movies/:id' } element={ <DetailsPage /> } />
+          <Route path={ '/movies/tv/series' } element={ <TvSeries /> } />
+          <Route path={ '/movies/all/upcoming' } element={ <TvSeries /> } />
+          {/* </Route> */ }
 
         </Routes>
       </Router>
