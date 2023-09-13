@@ -162,3 +162,9 @@
   left: 12px;
   top: 20px;
 }
+
+@media screen and (max-width: 500px) {
+  .sideNav {
+    min-width: 50%;
+  }
+}
