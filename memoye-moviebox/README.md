@@ -5,7 +5,7 @@ Created with React + Vite
 ## How to run
 
 1. Create `.env` file in the root directory
-2. In the `.env` store your TMBD API key **AND** ACCESS TOKEN As shown;
+2. In the `.env` store your TMBD API key **AND** ACCESS TOKEN As shown below;
 
    VITE_TMDB_API_KEY = '**YOUR-API-KEY-HERE**'
    VITE_TMDB_ACCESS_TOKEN = "Bearer **YOUR-ACCESS-TOKEN-HERE**"

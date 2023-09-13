@@ -20,10 +20,8 @@ const Movies = () => {
 
     return (
         <div className='moviesPage'>
-
-            <Logo className={ `otherPageLogo ${scrolling && 'scrollingLogo'}` } />
-
             <Outlet />
+
         </div>
     )
 }
