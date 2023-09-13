@@ -54,6 +54,7 @@
   height: 100vh;
   background: white;
   transition: left 200ms ease;
+  z-index: 20;
 }
 
 .sideNavOpen {

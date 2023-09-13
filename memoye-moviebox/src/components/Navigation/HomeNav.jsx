@@ -26,7 +26,7 @@ const HomeNav = () => {
             <SearchBox />
             <div className="navBtns">
                 <button className="signinBtn">Sign in</button>
-                <Hamburger />
+
             </div>
         </nav>
     )

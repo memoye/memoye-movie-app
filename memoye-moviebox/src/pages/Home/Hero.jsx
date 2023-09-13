@@ -7,6 +7,7 @@ import Loading from "../../components/Loading";
 import Ratings from "../../components/Card/Ratings";
 import Button from "../../components/Button";
 import { HiPlayCircle } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 // ... (imports and other code)
 const sample = {
@@ -29,11 +30,13 @@ const sample = {
 
 const Hero = () => {
     const endpoint = 'movie/popular'
+    const navigate = useNavigate()
     const params = { language: 'en-US', page: '1', region: 'ng' }
     const [isLoading, setIsLoading] = useState(false)
     const [popular, setPopular] = useState([])
     const [dispIndex, setDispIndex] = useState(0)
     const [topMovie, setTopMovie] = useState(sample)
+
 
     function fetchData() {
         setIsLoading(true)
@@ -75,18 +78,12 @@ const Hero = () => {
 
     useEffect(() => {
         setTopMovie(popular[dispIndex])
-        // setTimeout(() => {
-        //     if (dispIndex < 4) {
-        //         setDispIndex(prev => prev + 1)
-        //     } else {
-        //         setDispIndex(0)
-        //     }
-        // }, 30000)
-
-
     }, [dispIndex]);
 
+    function openDetails() {
+        navigate(`/movies/${topMovie?.id}`)
 
+    }
 
     // Use a separate useEffect to log the popular state after it's updated
     useEffect(() => {
@@ -109,6 +106,7 @@ const Hero = () => {
                 <Button
                     filled={ true }
                     className={ 'hero_CTA' }
+                    onClick={ openDetails }
                 >
                     <HiPlayCircle /> <span>Watch Trailer</span>
                 </Button>

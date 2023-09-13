@@ -4,7 +4,7 @@ import SideNav from "../../components/Navigation/SideNav"
 
 const Movies = () => {
     const { id } = useParams()
-    console.log(id)
+
     return (
         <div className='moviesPage'>
             <SideNav />

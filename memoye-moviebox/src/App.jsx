@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Search from './pages/Search';
 import SideNav from './components/Navigation/SideNav';
 import Movies from './pages/Movies';
-import Details from './pages/Movies/Details';
+import DetailsPage from './pages/Movies/DetailsPage';
 import TvSeries from './pages/TvSeries';
 
 
@@ -21,7 +21,7 @@ function App() {
           <Route path={ '/search/:query' } element={ <Search /> } />
 
           <Route path={ '/movies' } element={ <Movies /> }>
-            <Route path={ '/movies/:id' } element={ <Details /> } />
+            <Route path={ '/movies/:id' } element={ <DetailsPage /> } />
             <Route path={ '/movies/tv/series' } element={ <TvSeries /> } />
             <Route path={ '/movies/all/upcoming' } element={ <TvSeries /> } />
           </Route>

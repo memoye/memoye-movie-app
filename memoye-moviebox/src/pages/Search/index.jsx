@@ -68,7 +68,6 @@ const Search = () => {
                     { error === '' ? <div div className="cardsGrid">
                         { results
                             ?.map((result) => {
-                                console.log(result)
                                 {
                                     return (
                                         <Card

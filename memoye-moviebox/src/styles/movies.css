@@ -1,2 +1,77 @@
-.moviesPage {
+/* .moviesPage { */
+/* padding-top: 3rem; */
+/* } */
+
+.details {
+  margin-top: 3rem;
+}
+
+.hs-responsive-embed-youtube {
+  position: relative;
+  padding-bottom: 42%; /* 16:9 Aspect Ratio */
+  padding-top: 25px;
+}
+.hs-responsive-embed-youtube iframe {
+  position: absolute;
+  width: 80% !important;
+  aspect-ratio: 16/8 !important;
+  /* height: 80% !important; */
+  right: 9%;
+  border: none;
+  border-radius: 20px;
+}
+
+.detailsText_heading {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.detailsText_title {
+  color: #404040;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.5em;
+}
+
+.genresContainer {
+  display: flex;
+}
+
+.genre {
+  font-size: 0.55rem;
+  padding: 0.5em;
+  border-radius: 20px;
+  font-weight: 900;
+}
+
+.detailsRatingInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.movieOverview {
+  font-size: 1.25rem;
+}
+
+.movie_star {
+  font-size: 1.25rem;
+}
+
+.movie_star > span {
+  color: var(--rose-700);
+}
+
+.movieInfo {
+  display: flex;
+}
+
+.detailsLeft {
+}
+
+.detailsAside {
 }

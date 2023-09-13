@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../../styles/nav.css'
 import Logo from '../Logo'
@@ -6,7 +7,8 @@ import { PiTelevisionBold } from 'react-icons/pi'
 import { SlCalender } from 'react-icons/sl'
 import Button from '../Button'
 import Hamburger from './Hamburger'
-import { useEffect, useState } from 'react'
+
+
 
 const SideNav = ({ id }) => {
 
@@ -16,14 +18,9 @@ const SideNav = ({ id }) => {
         setIsOpen(prev => !prev)
     }
 
-    useEffect(() => {
-        console.log(isOpen)
-    }, [isOpen])
-
     return (
         <>
             <nav className={ `sideNav ${isOpen && 'sideNavOpen'}` }>
-
 
                 <Logo className={ 'sidNavlogo' } />
                 <NavLink to={ '/' } className={ 'sideNavLink' }><BiHome /> Home</NavLink>
