@@ -20,6 +20,7 @@ const HomeNav = () => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 30) {
                 setScrolled(true)
+                setIsOpen(false)
             } else (
                 setScrolled(false)
             )
