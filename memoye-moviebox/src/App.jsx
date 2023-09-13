@@ -4,18 +4,19 @@ import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from 'react
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import Search from './pages/Search';
-import SideNav from './components/Navigation/SideNav';
+
 import Movies from './pages/Movies';
 import DetailsPage from './pages/Movies/MovieDetails';
 import TvSeries from './pages/TvSeries';
+import HomeNav from './components/Navigation/HomeNav';
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className='App'>
       <Router>
+        <HomeNav />
         <Routes>
           <Route path={ '/' } element={ <Home /> } />
           <Route path={ '/search/:query' } element={ <Search /> } />

@@ -58,7 +58,7 @@ const Home = () => {
     return (
         <div className='home'>
             { isLoading ? <Loading /> : null }
-            <HomeNav />
+
             <Hero />
             <div className='cards'>
                 <div className='heading'>

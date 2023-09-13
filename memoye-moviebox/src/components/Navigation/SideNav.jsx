@@ -6,23 +6,17 @@ import { BiCameraMovie, BiHome, BiLogOut } from 'react-icons/bi'
 import { PiTelevisionBold } from 'react-icons/pi'
 import { SlCalender } from 'react-icons/sl'
 import Button from '../Button'
-import Hamburger from './Hamburger'
 
 
 
-const SideNav = ({ id }) => {
 
-    const [isOpen, setIsOpen] = useState(false)
-
-    function toggleOpen() {
-        setIsOpen(prev => !prev)
-    }
+const SideNav = ({ id, isOpen }) => {
 
     return (
         <>
             <nav className={ `sideNav ${isOpen && 'sideNavOpen'}` }>
 
-                <Logo className={ 'sidNavlogo' } />
+                {/* <Logo className={ 'sidNavlogo' } /> */ }
                 <NavLink to={ '/' } className={ 'sideNavLink' }><BiHome /> Home</NavLink>
                 <NavLink to={ `/movies/${id && id}` } className={ 'sideNavLink' }><BiCameraMovie />  Movies</NavLink>
                 <NavLink to={ '/movies/tv/series' } className={ 'sideNavLink' }><PiTelevisionBold /> TV Series</NavLink>
@@ -45,10 +39,7 @@ const SideNav = ({ id }) => {
                 </Button>
 
             </nav>
-            <Hamburger
-                className={ `sideMenu ${isOpen && 'active'}` }
-                onClick={ toggleOpen }
-            />
+
         </>
     )
 }

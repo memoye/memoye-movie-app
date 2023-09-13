@@ -4,10 +4,16 @@ import '../../styles/nav.css';
 import SearchBox from "./SearchBox"
 import Hamburger from "./Hamburger"
 import { useEffect, useState } from "react";
+import SideNav from "./SideNav";
 
 const HomeNav = () => {
     const [scrolled, setScrolled] = useState(false)
 
+    const [isOpen, setIsOpen] = useState(false)
+
+    function toggleOpen() {
+        setIsOpen(prev => !prev)
+    }
 
 
     useEffect(() => {
@@ -21,14 +27,23 @@ const HomeNav = () => {
     }, [])
 
     return (
-        <nav className={ `nav ${scrolled && 'scrolled'}` }>
-            <Logo />
-            <SearchBox />
-            <div className="navBtns">
-                <button className="signinBtn">Sign in</button>
-
-            </div>
-        </nav>
+        <>
+            <nav className={ `nav ${scrolled && 'scrolled'}` }>
+                <Logo />
+                <SearchBox />
+                <div className="navBtns">
+                    <button className="signinBtn">Sign in</button>
+                    <Hamburger
+                        className={ `${isOpen ? 'active' : null}` }
+                        onClick={ toggleOpen }
+                    />
+                </div>
+            </nav>
+            <SideNav
+                isOpen={ isOpen }
+            // id={ id }
+            />
+        </>
     )
 }
 export default HomeNav

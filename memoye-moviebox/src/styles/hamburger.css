@@ -12,8 +12,6 @@
   border-radius: 50%;
   transform: scale(80%);
 
-  /* I know.... */
-  position: fixed !important;
   z-index: 20;
 }
 

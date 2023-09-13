@@ -15,7 +15,6 @@ const Search = () => {
     const endpoint = 'search/multi'
     const params = { query: query, include_adult: 'false', language: 'en-US', page: '1' }
 
-    console.log(params.query)
 
     function fetchData() {
         setIsLoading(true)
@@ -55,7 +54,7 @@ const Search = () => {
 
     return (
         <div className="searchPage">
-            <HomeNav />
+
             { isLoading ? (<div>
                 <Loading />
                 Loading...

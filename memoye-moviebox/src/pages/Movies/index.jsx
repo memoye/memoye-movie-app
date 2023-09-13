@@ -20,7 +20,7 @@ const Movies = () => {
 
     return (
         <div className='moviesPage'>
-            <SideNav />
+
             <Logo className={ `otherPageLogo ${scrolling && 'scrollingLogo'}` } />
 
             <Outlet />

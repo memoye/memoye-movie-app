@@ -85,6 +85,8 @@
 .popularityNrecommendation {
   display: flex;
   /* flex-direction: row-reverse; */
+  max-width: 300px;
+
   gap: -5px;
   justify-content: start;
 }
@@ -96,6 +98,7 @@
   border-left: none;
   padding: 0 5px;
   z-index: 0;
+  max-width: 150px;
 }
 
 .castTitle {
@@ -128,6 +131,7 @@
 
 .movieInfo {
   display: flex;
+  gap: 1rem;
 }
 
 .sideActions {
@@ -148,4 +152,10 @@
 }
 
 .detailsAside {
+}
+
+@media screen and (max-width: 768px) {
+  .movieInfo {
+    flex-direction: column;
+  }
 }
