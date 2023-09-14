@@ -16,7 +16,6 @@ const SideNav = ({ id, isOpen }) => {
         <>
             <nav className={ `sideNav ${isOpen && 'sideNavOpen'}` }>
 
-                {/* <Logo className={ 'sidNavlogo' } /> */ }
                 <NavLink to={ '/' } className={ 'sideNavLink' }><BiHome /> Home</NavLink>
                 <NavLink to={ `/movies/${id && id}` } className={ 'sideNavLink' }><BiCameraMovie />  Movies</NavLink>
                 <NavLink to={ '/movies/tv/series' } className={ 'sideNavLink' }><PiTelevisionBold /> TV Series</NavLink>

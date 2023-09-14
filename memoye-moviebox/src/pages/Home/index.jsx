@@ -58,27 +58,28 @@ const Home = () => {
     return (
         <div className='home'>
             { isLoading ? <Loading /> : null }
+            { !isLoading && (<>
+                <Hero />
+                <div className='cards'>
+                    <div className='heading'>
+                        <h2 className='title'>Featured Movies</h2>
+                        <Button
+                            className={ 'seeMore' }
+                        >
+                            See More <BiChevronRight style={ { fontSize: '1.5em' } } />
+                        </Button>
+                    </div>
 
-            <Hero />
-            <div className='cards'>
-                <div className='heading'>
-                    <h2 className='title'>Featured Movies</h2>
-                    <Button
-                        className={ 'seeMore' }
-                    >
-                        See More <BiChevronRight style={ { fontSize: '1.5em' } } />
-                    </Button>
+                    <div className='cardsGrid'>
+                        {
+                            topRated?.map((movie, index) => {
+                                if (index < 12) return (<Card key={ movie.id } { ...movie } />)
+                            })
+                        }
+                    </div>
                 </div>
-
-                <div className='cardsGrid'>
-                    {
-                        topRated?.map((movie, index) => {
-                            if (index < 12) return (<Card key={ movie.id } { ...movie } />)
-                        })
-                    }
-                </div>
-            </div>
-
+            </>)
+            }
         </div>
     )
 }
