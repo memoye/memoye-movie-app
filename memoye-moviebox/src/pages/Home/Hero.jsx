@@ -98,6 +98,7 @@ const Hero = () => {
         <div className="hero" >
             { topMovie && <img src={ getImg(topMovie?.backdrop_path, true) } alt={ topMovie?.title } /> }
             <div className="herotext">
+                <img className="topPoster" src={ getImg(topMovie?.poster_path, true) } alt={ topMovie?.title } />
                 <h1 className="herotext_title">{ topMovie?.title }</h1>
                 { topMovie && <Ratings
                     { ...topMovie }
@@ -122,7 +123,7 @@ const Hero = () => {
                                 } }
                                 className={ `sideCtrlBtn ${(index === dispIndex) && 'displaying'}` }
                             >{ btn.id }</button>
-                            ))
+                        ))
                 }
             </div>
         </div >
