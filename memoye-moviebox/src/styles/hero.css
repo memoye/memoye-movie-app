@@ -180,7 +180,7 @@
   .hero > img {
     width: unset;
     height: 90%;
-    animation: zooming 10s ease infinite alternate;
+    animation: zooming 15s ease infinite alternate;
     /* object-fit: contain; */
   }
 }

@@ -124,7 +124,7 @@ const DetailsPage = () => {
             <section className='movieInfo'>
                 <section className='detailsLeft'>
                     <div className='detailsText_heading'>
-                        <p className='detailsText_title'><span data-testid={ 'movie-title' }> { title } </span> • <span data-testid={ 'movie-release-date' }> { release_date?.slice(0, 4) }</span>  • <span>{ `   ${movieInfo.adult ? '18+' : 'PG-13'} ` }</span> •  <span data-testid={ 'movie-runtime' }>{ runtime } mins</span> </p>
+                        <p className='detailsText_title'><span data-testid={ 'movie-title' }> { title } </span> • <span data-testid={ 'movie-release-date' }> { release_date }</span>  • <span>{ `   ${movieInfo.adult ? '18+' : 'PG-13'} ` }</span> •  <span data-testid={ 'movie-runtime' }>{ runtime } mins</span> </p>
                         <div className='genresContainer'>
                             {
                                 movieInfo?.genres
