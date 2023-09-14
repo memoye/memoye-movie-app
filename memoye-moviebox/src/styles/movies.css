@@ -30,7 +30,7 @@
   /* height: 80% !important; */
   right: 9%;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .detailsText_heading {
@@ -157,5 +157,13 @@
 @media screen and (max-width: 768px) {
   .movieInfo {
     flex-direction: column;
+  }
+
+  .hs-responsive-embed-youtube iframe {
+    position: absolute;
+    width: 90% !important;
+    aspect-ratio: 16/9 !important;
+    height: 80% !important;
+    right: 5%;
   }
 }
